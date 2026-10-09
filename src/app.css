@@ -1,0 +1,50 @@
+@import 'tailwindcss';
+
+@font-face {
+	font-family: 'JetBrains Mono';
+	src: url('/mono.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@theme {
+	--color-bg-800: #131313;
+	--color-bg-700: #1b1b1b;
+	--color-bg-600: #272727;
+	--color-bg-500: #3d3d3d;
+	--color-bg-400: #5d5d5d;
+	--color-bg-300: #858585;
+	--color-bg-200: #b4b4b4;
+	--color-bg-150: #f2f2f2;
+	--color-bg-100: #ffffff;
+	--color-p-purple-200: #ca52c9;
+	--color-p-blue-200: #00cdf9;
+	--color-p-blue-100: #0cf1ff;
+	--color-p-blue-300: #0098dc;
+	--color-p-orange-100: #ffc825;
+	--color-p-green-200: #5ac54f;
+	--color-p-red-200: #ea323c;
+	--font-mono: 'JetBrains Mono', monospace;
+}
+
+@layer components {
+	.pill {
+		@apply rounded-full border border-bg-500 bg-bg-700 px-4 py-1.5 text-sm text-bg-200 transition-colors hover:border-bg-300 hover:text-bg-150 cursor-pointer;
+	}
+	.pill-active {
+		@apply border-p-blue-200 bg-p-blue-200 text-bg-800 hover:text-bg-800;
+	}
+	.cell svg {
+		width: 100%;
+		height: 100%;
+	}
+	.hide-nums text {
+		display: none;
+	}
+	/* KanjiVG stroke numbers are sized for a 109-unit viewBox; shrink + tint them */
+	.cell svg text {
+		font-size: 4.5px !important;
+		fill: #00cdf9 !important;
+		font-family: 'JetBrains Mono', monospace;
+	}
+}
