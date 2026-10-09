@@ -1,6 +1,6 @@
 <script>
 	import { onMount, tick } from 'svelte';
-	import { chars, kanaKind, loadStrokes } from './lib/kanji.js';
+	import { chars, kanaKind, loadStrokes } from '#lib/kanji.js';
 
 	const fromUrl = new URLSearchParams(location.search).get('q') || '';
 
