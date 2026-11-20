@@ -15,7 +15,7 @@ COPY . .
 RUN pnpm build
 
 # ---- runtime stage ----
-FROM nginx:1.27-alpine AS runtime
+FROM nginx:1.30.7-alpine AS runtime
 
 # SPA-ish static serving; adapter-static output
 COPY --from=build /app/dist /usr/share/nginx/html
